@@ -1,15 +1,17 @@
 from random import randint
 
+Yes = None
 
-Want_Play_Game = input('Do you want to play a game of rock paper scissors?  ').lower()
+Want_Play_Game = input('Oh, hello there, I didnt see yo- umm, my name is William, D-Do you want to play a game of rock paper scissors?  ').lower()
 if Want_Play_Game in ('yes', 'yup', 'y', 'sure', 'yeah', 'ok', 'okay'):
     Yes = 1
 else:
-    Want_Play_Game_2 = input('Ok well then, umm... \n Alright do you want to play tictactoe instead?  ').lower()
+    Want_Play_Game_2 = input('Ok well then, umm... \n Well how about tictactoe instead?  ').lower()
     if Want_Play_Game_2 in ('yes', 'yup', 'y', 'sure', 'yeah', 'ok', 'okay'):
         Yes = 2
     else:
-        print('Fine then i didnt want to play anyways. Goodbye.')
+        print('Ok then umm... PLease dont go, please stay, I-I havent talked to anyone in a while... Please just stay.')
+        quit()
 
 #Rock Paper Scissors
 while Yes == 1:
@@ -47,12 +49,7 @@ while Yes == 1:
 
 #Tictactoe
 
-global Player_input_2
-global Player_input_3
-global Player_input_4
-global Player_input_5
-
-Player_input_1 = "A"
+Player_input_1 = "'"
 Player_input_2 = "B"
 Player_input_3 = "C"
 Player_input_4 = "D"
@@ -73,36 +70,60 @@ Spot_7 = '_'
 Spot_8 = '_'
 Spot_9 = '_'
 
-def Chosen_player_slot_function():
+def chosen_player_slot_function():
 
+    global Player_input_1
     global Player_input_2
     global Player_input_3
     global Player_input_4
     global Player_input_5
 
+    while Player_input_1 not in {'1', '2', '3', '4', '5', '6', '7', '8', '9'}:
+        Player_input_1 = input("i'm sorry but umm, that's not one of the spots on the board, you mind trying again please?  ")
+        if Player_input_1 in {'1', '2', '3', '4', '5', '6', '7', '8', '9'}:
+            break
+    while Player_input_2 not in {'1', '2', '3', '4', '5', '6', '7', '8', '9'}:
+        Player_input_2 = input("i'm sorry but umm, that's not one of the spots on the board, you mind trying again please?  ")
+        if Player_input_2 in {'1', '2', '3', '4', '5', '6', '7', '8', '9'}:
+            break
+    while Player_input_3 not in {'1', '2', '3', '4', '5', '6', '7', '8', '9'}:
+        Player_input_3 = input("i'm sorry but umm, that's not one of the spots on the board, you mind trying again please?  ")
+        if Player_input_3 in {'1', '2', '3', '4', '5', '6', '7', '8', '9'}:
+            break
+    while Player_input_4 not in {'1', '2', '3', '4', '5', '6', '7', '8', '9'}:
+        Player_input_4 = input("i'm sorry but umm, that's not one of the spots on the board, you mind trying again please?  ")
+        if Player_input_4 in {'1', '2', '3', '4', '5', '6', '7', '8', '9'}:
+            break
+    while Player_input_5 not in {'1', '2', '3', '4', '5', '6', '7', '8', '9'}:
+        Player_input_5 = input("i'm sorry but umm, that's not one of the spots on the board, you mind trying again please?  ")
+        if Player_input_5 in {'1', '2', '3', '4', '5', '6', '7', '8', '9'}:
+            break
+
     while Player_input_2 in {Player_input_1, Computer_input_1}:
-        Player_input_2 = input('Sorry that sopt has already been filled, Pick a diffrent number.  ')
+        Player_input_2 = input("Sorry that spot has already been filled, i'd like it if you picked a diffrent number please.  ")
         if Player_input_5 not in {Player_input_1, Computer_input_1}:
             return
     while Player_input_3 in {Player_input_1, Computer_input_1, Player_input_2, Computer_input_2}:
-        Player_input_3 = input('Sorry that sopt has already been filled, Pick a diffrent number.  ')
+        Player_input_3 = input("Sorry that spot has already been filled, i'd like it if you picked a diffrent number please.  ")
         if Player_input_5 not in {Player_input_1, Computer_input_1, Player_input_2, Computer_input_2}:
             return
     while Player_input_4 in {Player_input_1, Computer_input_1, Player_input_2, Computer_input_2, Player_input_3, Computer_input_3}:
-        Player_input_4 = input('Sorry that sopt has already been filled, Pick a diffrent number.  ')
+        Player_input_4 = input("Sorry that spot has already been filled, i'd like it if you picked a diffrent number please.  ")
         if Player_input_5 not in {Player_input_1, Computer_input_1, Player_input_2, Computer_input_2, Player_input_3, Computer_input_3}:
             return 
     while Player_input_5 in {Player_input_1, Computer_input_1, Player_input_2, Computer_input_2, Player_input_3, Computer_input_3, Player_input_4, Computer_input_4}:
-        Player_input_5 = input('Sorry that sopt has already been filled, Pick a diffrent number.  ')
+        Player_input_5 = input("Sorry that spot has already been filled, i'd like it if you picked a diffrent number please.  ")
         if Player_input_5 not in {Player_input_1, Computer_input_1, Player_input_2, Computer_input_2, Player_input_3, Computer_input_3, Player_input_4, Computer_input_4}:
             return
 
 while Yes == 2:
-    Player_input_1 = input(f'You go first, pick a number 1-9 to place your choice(one is in the top right and nin in the bottom left). \n   |{Spot_1}|{Spot_2}|{Spot_3}|\n   |{Spot_4}|{Spot_5}|{Spot_6}|\n   |{Spot_7}|{Spot_8}|{Spot_9}|      ')
+    Player_input_1 = input(f'You go first, pick a number 1-9 to place your choice(one is in the top right and nine in the bottom left). \n   |{Spot_1}|{Spot_2}|{Spot_3}|\n   |{Spot_4}|{Spot_5}|{Spot_6}|\n   |{Spot_7}|{Spot_8}|{Spot_9}|      ')
+    chosen_player_slot_function()
+    Player_input_1 = int(Player_input_1)
     computer_input_1 = randint(1,9)
-    while computer_input_1 in {Player_input_1, Player_input_2, Computer_input_2, Player_input_3, Computer_input_3, Player_input_4,}:
+    while computer_input_1 in {Player_input_1, Player_input_2, Computer_input_2, Player_input_3, Computer_input_3, Player_input_4}:
         computer_input_1 = randint(1,9)
-        if computer_input_1 not in {Player_input_1, Player_input_2, Computer_input_2, Player_input_3, Computer_input_3, Player_input_4,}:
+        if computer_input_1 not in {Player_input_1, Player_input_2, Computer_input_2, Player_input_3, Computer_input_3, Player_input_4}:
             break
 
     if Player_input_1 == 1:
@@ -112,7 +133,7 @@ while Yes == 2:
     elif Player_input_1 == 3:
         Spot_3 = 'X'
     elif Player_input_1 == 4:
-        Spot_4 = 'X'      
+        Spot_4 = 'X'
     elif Player_input_1 == 5:
         Spot_5 = 'X'
     elif Player_input_1 == 6:
@@ -123,8 +144,6 @@ while Yes == 2:
         Spot_8 = 'X'
     elif Player_input_1 == 9:
         Spot_9 = 'X'
-    else:
-        print("broken")
 
     if Computer_input_1 == 1:
         Spot_1 = 'O'
@@ -133,7 +152,7 @@ while Yes == 2:
     elif Computer_input_1 == 3:
         Spot_3 = 'O'
     elif Computer_input_1 == 4:
-        Spot_4 = 'O' 
+        Spot_4 = 'O'
     elif Computer_input_1 == 5:
         Spot_5 = 'O'
     elif Computer_input_1 == 6:
@@ -144,15 +163,14 @@ while Yes == 2:
         Spot_8 = 'O'
     elif Computer_input_1 == 9:
         Spot_9 = 'O'
-    else:
-        print("broken")
 
     Player_input_2 = input(f'I went in space {computer_input_1}, now it is your turn. Here is the new board \n   |{Spot_1}|{Spot_2}|{Spot_3}|\n   |{Spot_4}|{Spot_5}|{Spot_6}|\n   |{Spot_7}|{Spot_8}|{Spot_9}|      ')
-    Chosen_player_slot_function()
+    chosen_player_slot_function()
+    Player_input_2 = int(Player_input_2)
     Computer_input_2 = randint(1,9)
-    while Computer_input_2 in {Player_input_1, Computer_input_1, Player_input_2, Player_input_3, Computer_input_3, Player_input_4,}:
+    while Computer_input_2 in {Player_input_1, Computer_input_1, Player_input_2, Player_input_3, Computer_input_3, Player_input_4}:
         Computer_input_2 = randint (1,9)
-        if Computer_input_2 not in {Player_input_1, Computer_input_1, Player_input_2, Player_input_3, Computer_input_3, Player_input_4,}:
+        if Computer_input_2 not in {Player_input_1, Computer_input_1, Player_input_2, Player_input_3, Computer_input_3, Player_input_4}:
             break
 
     if Player_input_2 == 1:
@@ -196,7 +214,8 @@ while Yes == 2:
         Spot_9 = 'O'
 
     Player_input_3 = input(f'I went in space {Computer_input_2}, now it is your turn. Here is the new board \n   |{Spot_1}|{Spot_2}|{Spot_3}|\n   |{Spot_4}|{Spot_5}|{Spot_6}|\n   |{Spot_7}|{Spot_8}|{Spot_9}|      ')
-    Chosen_player_slot_function()
+    chosen_player_slot_function()
+    Player_input_3 = int(Player_input_3)
     Computer_input_3 = randint(1,9)
     while Computer_input_3 in {Player_input_1, Computer_input_1, Player_input_2, Computer_input_2, Player_input_3, Player_input_4,}:
         Computer_input_3 = randint (1,9)
@@ -242,13 +261,14 @@ while Yes == 2:
         Spot_9 = 'O'
 
     Player_input_4 = input(f'I went in space {Computer_input_3}, now it is your turn. Here is the new board \n   |{Spot_1}|{Spot_2}|{Spot_3}|\n   |{Spot_4}|{Spot_5}|{Spot_6}|\n   |{Spot_7}|{Spot_8}|{Spot_9}|      ')
-    Chosen_player_slot_function()
+    chosen_player_slot_function()
+    Player_input_4 = int(Player_input_4)
     Computer_input_4 = randint(1,9)
     while Computer_input_4 in {Player_input_1, Computer_input_1, Player_input_2, Computer_input_2, Player_input_3, Computer_input_3, Player_input_4,}:
         Computer_input_4 = randint (1,9)
         if Computer_input_4 not in {Player_input_1, Computer_input_1, Player_input_2, Computer_input_2, Player_input_3, Computer_input_3, Player_input_4,}:
             break
-        
+    
     if Player_input_4 == 1:
         Spot_1 = 'X'
     elif Player_input_4 == 2:
@@ -256,7 +276,7 @@ while Yes == 2:
     elif Player_input_4 == 3:
         Spot_3 = 'X'
     elif Player_input_4 == 4:
-        Spot_4 = 'X'       
+        Spot_4 = 'X'
     elif Player_input_4 == 5:
         Spot_5 = 'X'
     elif Player_input_4 == 6:
@@ -288,35 +308,28 @@ while Yes == 2:
         Spot_9 = 'O'
 
     Player_input_5 = input(f'I went in space {Computer_input_4}, now it is your turn. Here is the new board \n   |{Spot_1}|{Spot_2}|{Spot_3}|\n   |{Spot_4}|{Spot_5}|{Spot_6}|\n   |{Spot_7}|{Spot_8}|{Spot_9}|      ')
-    Chosen_player_slot_function()
+    chosen_player_slot_function()
+    Player_input_5 = int(Player_input_5)
+
+    if Player_input_5 == 1:
+        Spot_1 = 'X'
+    elif Player_input_5 == 2:
+        Spot_2 = 'X'
+    elif Player_input_5 == 3:
+        Spot_3 = 'X'
+    elif Player_input_5 == 4:
+        Spot_4 = 'X'
+    elif Player_input_5 == 5:
+        Spot_5 = 'X'
+    elif Player_input_5 == 6:
+        Spot_6 = 'X'
+    elif Player_input_5 == 7:
+        Spot_7 = 'X'
+    elif Player_input_5 == 8:
+        Spot_8 = 'X'
+    elif Player_input_5 == 9:
+        Spot_9 = 'X'
+    
+    print(f'   |{Spot_1}|{Spot_2}|{Spot_3}|\n   |{Spot_4}|{Spot_5}|{Spot_6}|\n   |{Spot_7}|{Spot_8}|{Spot_9}|')
+
     quit()
-
-
-
-
-
-
-
-
-
-
-#    else:
-#        if Player_input_1 == 1:
-#            Spot_1 = 'X'
-#        elif Player_input_1 == 2:
-#            Spot_2 = 'X'
-#        elif Player_input_1 == 3:
-#            Spot_3 = 'X'
-#        elif Player_input_1 == 4:
-#            Spot_4 = 'X'       
-#        elif Player_input_1 == 5:
-#            Spot_5 = 'X'
-#        elif Player_input_1 == 6:
-#            Spot_6 = 'X'
-#        elif Player_input_1 == 7:
-#            Spot_7 = 'X'
-#        elif Player_input_1 == 8:
-#            Spot_8 = 'X'
-#        elif Player_input_1 == 9:
-#            Spot_9 = 'X'
-#        return
